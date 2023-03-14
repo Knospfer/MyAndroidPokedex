@@ -1,4 +1,7 @@
-package com.mberrueta.pokedexexample.data.remote.responses
+package com.mberrueta.mypokedex.core.models
+
+import com.mberrueta.mypokedex.core.models.MoveLearnMethod
+import com.mberrueta.mypokedex.core.models.VersionGroup
 
 data class VersionGroupDetail(
     val level_learned_at: Int,

@@ -1,5 +1,7 @@
 package com.mberrueta.pokedexexample.data.remote.responses
 
+import com.mberrueta.mypokedex.core.models.Animated
+
 data class BlackWhite(
     val animated: Animated,
     val back_default: String,

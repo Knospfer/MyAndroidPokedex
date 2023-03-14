@@ -1,4 +1,4 @@
-package com.mberrueta.pokedexexample.data.remote.responses
+package com.mberrueta.mypokedex.core.models
 
 data class Yellow(
     val back_default: String,

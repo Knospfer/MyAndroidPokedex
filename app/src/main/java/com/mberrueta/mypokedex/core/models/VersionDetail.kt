@@ -1,4 +1,6 @@
-package com.mberrueta.pokedexexample.data.remote.responses
+package com.mberrueta.mypokedex.core.models
+
+import com.mberrueta.mypokedex.core.models.Version
 
 data class VersionDetail(
     val rarity: Int,

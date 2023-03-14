@@ -2,8 +2,8 @@ package com.mberrueta.mypokedex.core.utils
 
 import androidx.compose.ui.graphics.Color
 import com.mberrueta.mypokedex.core.theme.*
-import com.mberrueta.pokedexexample.data.remote.responses.Stat
-import com.mberrueta.pokedexexample.data.remote.responses.Type
+import com.mberrueta.mypokedex.core.models.Stat
+import com.mberrueta.mypokedex.core.models.Type
 import java.util.*
 
 fun parseTypeToColor(type: Type): Color {

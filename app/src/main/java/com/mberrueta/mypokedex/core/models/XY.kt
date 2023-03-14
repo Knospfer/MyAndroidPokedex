@@ -1,4 +1,4 @@
-package com.mberrueta.pokedexexample.data.remote.responses
+package com.mberrueta.mypokedex.core.models
 
 data class XY(
     val front_default: String,
