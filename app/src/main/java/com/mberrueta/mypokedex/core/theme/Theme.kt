@@ -1,4 +1,4 @@
-package com.mberrueta.mypokedex.ui.theme
+package com.mberrueta.mypokedex.core.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
