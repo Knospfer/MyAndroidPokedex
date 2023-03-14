@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id "org.jetbrains.kotlin.kapt"
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -38,7 +39,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.2.0'
+        kotlinCompilerExtensionVersion '1.4.0'
     }
     packagingOptions {
         resources {
@@ -81,17 +82,16 @@ dependencies {
     ///Dragger Hilt, DI
     implementation 'com.google.dagger:hilt-android:2.45'
     kapt 'com.google.dagger:hilt-compiler:2.45'
-    // For instrumentation tests
-    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.45'
-    kaptAndroidTest 'com.google.dagger:hilt-compiler:2.45'
-    // For local unit tests
-    testImplementation 'com.google.dagger:hilt-android-testing:2.45'
-    kaptTest 'com.google.dagger:hilt-compiler:2.45'
 
     // Coil
     implementation "io.coil-kt:coil:2.2.2"
     implementation "io.coil-kt:coil-compose:2.2.2"
     implementation "com.google.accompanist:accompanist-coil:0.10.0"
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.9.0'
+    //Dominant color palette
+    implementation 'androidx.palette:palette:1.0.0'
 }
 
 kapt {
