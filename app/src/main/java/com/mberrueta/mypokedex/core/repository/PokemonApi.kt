@@ -8,9 +8,6 @@ import retrofit2.http.Query
 
 interface PokemonApi {
     @GET("pokemon")
-    suspend fun getAllPokemons(): PokemonList
-
-    @GET("pokemon")
     suspend fun getPokemonListPaginated(
         @Query("limit") limint: Int,
         @Query("offset") offset: Int,

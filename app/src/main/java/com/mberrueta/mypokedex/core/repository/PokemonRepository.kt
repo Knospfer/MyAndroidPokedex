@@ -11,16 +11,7 @@ import javax.inject.Inject
 class PokemonRepository @Inject constructor(private val api: PokemonApi) {
     suspend fun getAllPokemons(): Resource<List<PokemonEntry>> {
         val response = try {
-            api.getAllPokemons()
-        } catch (e: Exception) {
-            return Resource.Error(null, "An error occured")
-        }
-        return Resource.Success(parseResponse(response))
-    }
-
-    suspend fun getPokemonListPaginated(limit: Int, offset: Int): Resource<List<PokemonEntry>> {
-        val response = try {
-            api.getPokemonListPaginated(limit, offset)
+            api.getPokemonListPaginated(10000, 0)
         } catch (e: Exception) {
             return Resource.Error(null, "An error occured")
         }
