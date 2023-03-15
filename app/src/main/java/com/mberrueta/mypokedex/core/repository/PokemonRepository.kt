@@ -18,7 +18,7 @@ class PokemonRepository @Inject constructor(private val api: PokemonApi) {
         return Resource.Success(parseResponse(response))
     }
 
-    suspend fun getPokemonInfo(name: String): Resource<Pokemon> {
+    suspend fun getPokemonDetail(name: String): Resource<Pokemon> {
         val response = try {
             api.getPokemonDetail(name)
         } catch (e: Exception) {

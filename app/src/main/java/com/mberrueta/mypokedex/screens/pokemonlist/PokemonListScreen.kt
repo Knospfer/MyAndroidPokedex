@@ -20,23 +20,27 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import coil.compose.SubcomposeAsyncImage
 import com.mberrueta.mypokedex.core.entities.PokemonEntry
 
 @Composable
-fun PokemonListScreen() {
+fun PokemonListScreen(navController: NavController) {
     Scaffold(
         topBar = { TopAppBar(backgroundColor = Color.Transparent) {} },
         content = { padding ->
             Box(modifier = Modifier.padding(padding)) {
-                PageContent()
+                PageContent(navController)
             }
         },
     )
 }
 
 @Composable
-fun PageContent(viewModel: PokemonListScreenViewModel = hiltViewModel()) {
+fun PageContent(
+    navController: NavController,
+    viewModel: PokemonListScreenViewModel = hiltViewModel()
+) {
     val pokemonList by remember { viewModel.completePokemonList }
 
     Column {
@@ -52,7 +56,7 @@ fun PageContent(viewModel: PokemonListScreenViewModel = hiltViewModel()) {
             columns = GridCells.Fixed(2),
             content = {
                 items(pokemonList.size) { index ->
-                    PokemonCard(pokemonList[index])
+                    PokemonCard(pokemonList[index], navController)
                 }
             })
     }
@@ -61,6 +65,7 @@ fun PageContent(viewModel: PokemonListScreenViewModel = hiltViewModel()) {
 @Composable
 fun PokemonCard(
     pokemonEntry: PokemonEntry,
+    navController: NavController,
     viewModel: PokemonListScreenViewModel = hiltViewModel()
 ) {
     val defaultDominantColor = MaterialTheme.colors.surface
@@ -77,7 +82,7 @@ fun PokemonCard(
             .aspectRatio(1f)
             .background(dominantColor)
             .clickable {
-                //todo: naviga a dettaglio
+                navController.navigate("pokemon_detail_screen/${pokemonEntry.name}")
             }
     ) {
         Column(
