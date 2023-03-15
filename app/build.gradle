@@ -22,9 +22,22 @@ android {
         }
     }
 
+//    ES FLAVORS
+//    flavorDimensions "paidMode"
+//    productFlavors {
+//        free {
+//            dimension "paidMode" //è GIUSRO COSì, quea gli dai l'insieme del flavor, e dopo le cose che lo caratterizzano
+//            applicationIdSuffix ".free"
+//        }
+//        paid {
+//            dimension "paidMode"
+//            applicationIdSuffix ".paid"
+//        }
+//    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled false //lo metti a true e via quando publichi
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
