@@ -1,10 +1,12 @@
 package com.mberrueta.mypokedex.core.repository
 
+import androidx.compose.ui.text.toLowerCase
 import com.mberrueta.mypokedex.core.definitions.Resource
 import com.mberrueta.mypokedex.core.entities.PokemonEntry
 import com.mberrueta.mypokedex.core.models.Pokemon
 import com.mberrueta.mypokedex.core.models.PokemonList
 import dagger.hilt.android.scopes.ActivityScoped
+import java.util.*
 import javax.inject.Inject
 
 @ActivityScoped
@@ -20,7 +22,7 @@ class PokemonRepository @Inject constructor(private val api: PokemonApi) {
 
     suspend fun getPokemonDetail(name: String): Resource<Pokemon> {
         val response = try {
-            api.getPokemonDetail(name)
+            api.getPokemonDetail(name.lowercase())
         } catch (e: Exception) {
             return Resource.Error(null, "An error occured")
         }

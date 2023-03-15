@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
                             it.arguments?.getString("pokemonName") ?: "Missigno"
                         }
 
-                        PokemonDetailScreen(pokemonName)
+                        PokemonDetailScreen(pokemonName, navController)
                     }
                 }
             }
